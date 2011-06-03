@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title mondrian-olap demo
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'vendor/jquery-1.5.1.min', 'vendor/rails',
+                              'vendor/ace', 'vendor/theme-eclipse', 'vendor/mode-ruby', 'application'
+    = csrf_meta_tag
+    = yield :head
+  %body
+    #container
+      = flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
+      = yield

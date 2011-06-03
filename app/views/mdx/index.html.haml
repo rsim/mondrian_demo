@@ -1,0 +1,24 @@
+%h2= @title
+
+%pre#editor
+%form#query{:method => 'GET', :data => {:remote => "true"}}
+  %textarea{:name => "q"}
+  %code
+    %pre#mdx
+  %input{:type => "submit", :name => "table", :value => "Execute"}
+
+#result
+
+:javascript
+  $(function() {
+    var RubyMode = require("ace/mode/ruby").Mode,
+        editor = ace.edit("editor"),
+        session = editor.getSession();
+    editor.setTheme("ace/theme/eclipse");
+    session.setMode(new RubyMode());
+    session.setTabSize(2);
+    session.setUseSoftTabs(true);
+    $("form").submit(function(){
+      $("textarea", this).val(editor.getSession().getValue());
+    });
+  });
