@@ -1,9 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
-
-gem 'arel', '2.0.9'
-gem 'rake', '0.8.7'
+gem 'rails', '3.1.1'
 
 gem 'haml'
 gem 'json'
@@ -17,7 +14,7 @@ platforms :jruby do
 
   gem 'mondrian-olap', :git => 'git://github.com/rsim/mondrian-olap.git'
 
-  gem 'kirk', '~> 0.2.0.beta.4'
+  gem 'kirk', '~> 0.2.0.beta.7'
 end
 
 group :development, :test do

@@ -64,6 +64,11 @@ Go to `http://localhost:3000/mdx/builder` and try following queries
 
     olap.from('Sales').
     columns('[Measures].[Unit Sales]', '[Measures].[Store Sales]').
+    rows('[Products].children').
+    where('[Time].[1997].[Q1].[1]', '[Time].[1997].[Q1].[2]').crossjoin('[Customers].[USA].[CA]', '[Customers].[USA].[OR]')
+
+    olap.from('Sales').
+    columns('[Measures].[Unit Sales]', '[Measures].[Store Sales]').
     rows('[Products].children').crossjoin('[Customers].[Canada]', '[Customers].[USA]').nonempty.
     where('[Time].[1997].[Q1]')
 
@@ -110,7 +115,7 @@ Cube queries
 
 You can try following cube queries in `rails console`
 
-    cube = olap.cube('Sales')
+    cube = Dwh.olap.cube('Sales')
     cube.dimension_names                    # => ['Measures', 'Customers', 'Products', 'Time']
     cube.dimensions                         # => array of dimension objects
     cube.dimension('Customers')             # => customers dimension object
