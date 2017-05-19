@@ -23,11 +23,11 @@ Install all necessary gems with `bundle install`.
 
 Run application with
 
-    jruby -S rails server
+    jruby -S script/rails server
 
 or if you would like to see debugging output from Mondrian (including generated SQL statements) then start application with
 
-    jruby -J-Dlog4j.configuration=config/log4j.properties -S rails s
+    jruby -J-Dlog4j.configuration=config/log4j.properties -S script/rails s
 
 MDX demo
 ========
