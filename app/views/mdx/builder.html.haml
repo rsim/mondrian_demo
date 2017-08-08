@@ -1,16 +1,17 @@
 %h2= @title
 
 %p
-  Or try the
-  = link_to 'builder', builder_mdx_index_path
+  Back to the
+  = link_to 'index', mdx_index_path
 
 %p
   Maybe something like
   %pre
   
-    SELECT  {[Measures].[Unit Sales], [Measures].[Store Sales]} ON COLUMNS, {[Products].children} ON ROWS
-    FROM  [Sales]
-    WHERE ([Time].[1997].[Q1], [Customers].[USA].[CA])
+    olap.from('Sales').
+    columns('[Measures].[Unit Sales]', '[Measures].[Store Sales]').
+    rows('[Products].children').
+    where('[Time].[1997].[Q1]', '[Customers].[USA].[CA]')
 
 
 %pre#editor

@@ -11,4 +11,10 @@
     #container
       = flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
+      %p
+        You might want to visit
+        %a{href: 'https://github.com/rsim/mondrian_demo', TARGET: '_BLANK'}
+          https://github.com/rsim/mondrian_demo
+        for more info.
+
       = yield
