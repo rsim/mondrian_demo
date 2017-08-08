@@ -1,5 +1,13 @@
 %h2= @title
 
+%p
+  Maybe something like
+  %pre
+    SELECT  {[Measures].[Unit Sales], [Measures].[Store Sales]} ON COLUMNS, {[Products].children} ON ROWS
+    FROM  [Sales]
+    WHERE ([Time].[1997].[Q1], [Customers].[USA].[CA])
+
+
 %pre#editor
 %form#query{:method => 'GET', :data => {:remote => "true"}}
   %textarea{:name => "q"}

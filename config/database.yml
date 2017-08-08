@@ -9,7 +9,7 @@ development: &development
   adapter: mysql
   encoding: utf8
   reconnect: false
-  host: localhost
+  host: db
   database: foodmart
   pool: 5
   username: foodmart
@@ -33,7 +33,7 @@ development: &development
 #   username: root
 #   password:
 #   socket: /tmp/mysql.sock
-# 
+#
 # production:
 #   adapter: mysql2
 #   encoding: utf8
