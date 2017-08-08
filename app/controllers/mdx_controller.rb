@@ -15,7 +15,7 @@ class MdxController < ApplicationController
       @result = @query.execute
       format_result
     end
-    render :action => 'index'
+    # render :action => 'index'
   end
 
   private
